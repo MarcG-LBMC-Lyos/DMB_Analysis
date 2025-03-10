@@ -2,3 +2,7 @@
 - Corrected pixel count for averaged field (was not the sume of pixel count but sum(pixel_count**2)/sum(pixel_count)
 - Modified CLIP_LIMIT to 0.02 (more gives worse contrast...)
 - Added an average of averaged field which share the same letters (e.g. "cort1", "cort2" gives a "cort" field which is the average of cort1 and cort2).
+
+0.1
+- Added thickness of 20 and 80 µm.
+- Added exception for scikit-image function name depending on version (rgb2gray/rgb2grey).
