@@ -26,7 +26,9 @@ import xlrd
 
 
 RESOLUTION = '720x540'  # Original Resolution of the window
-THICKNESS = {50: (0.378, 0.755, 1.133, 1.511, 1.888, 2.266, 2.644, 3.021),
+THICKNESS = {20: (0.944163, 1.888326, 2.832489, 3.776652, 4.720815, 5.664978, 6.609141, 7.553304),
+             50: (0.378, 0.755, 1.133, 1.511, 1.888, 2.266, 2.644, 3.021),
+             80: (0.23604075, 0.4720815, 0.70812225, 0.944163, 1.18020375, 1.4162445, 1.65228525, 1.888326),
              100: (0.189, 0.378, 0.567, 0.755, 0.944, 1.133, 1.322, 1.511)}  # key: standard thickness;
                                                                              # value: list of the 8 steps aluminium
                                                                              # standard corresponding DMB.
@@ -103,7 +105,10 @@ class MainProgram(tk.Tk):
         # Standard thickness selection (radio buttons)
         self.default_thickness = tk.DoubleVar(value=list(THICKNESS.keys())[-1])
         for i, thickness in enumerate(THICKNESS):
-            tk.Radiobutton(master=self.panelToolFrame, text="%s µm"%thickness, variable=self.default_thickness, value=thickness).grid(row=nrow, column=i)
+            if not i%2 and i != 0:
+                nrow += 1
+            tk.Radiobutton(master=self.panelToolFrame, text="%s µm"%thickness, variable=self.default_thickness, value=thickness).grid(row=nrow, column=i%2)
+
         nrow += 1
 
 
