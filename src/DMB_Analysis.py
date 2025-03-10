@@ -24,7 +24,7 @@ from skimage.exposure import equalize_adapthist
 from skimage.morphology import dilation, disk
 import xlrd
 
-
+__version__ = '0.1'
 RESOLUTION = '720x540'  # Original Resolution of the window
 THICKNESS = {20: (0.944163, 1.888326, 2.832489, 3.776652, 4.720815, 5.664978, 6.609141, 7.553304),
              50: (0.378, 0.755, 1.133, 1.511, 1.888, 2.266, 2.644, 3.021),
