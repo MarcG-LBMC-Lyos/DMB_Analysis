@@ -9,7 +9,10 @@ import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
 from tkinter.filedialog import askopenfilename, askopenfilenames
 from skimage import io, util, exposure
-from skimage.color import rgb2grey, grey2rgb
+try:
+    from skimage.color import rgb2grey, grey2rgb
+except:
+    from skimage.color import rgb2gray, gray2rgb
 import numpy as np
 from PIL import Image, ImageDraw
 from savitsky_golay import savitsky_golay
